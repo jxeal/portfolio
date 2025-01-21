@@ -1,7 +1,7 @@
 import { Terminal } from "lucide-react";
 
 export const data = {
-    alias: "jxeal",
+    alias: "zhunxeal",
     name: "Sayak Majumder",
     description:
       "As a KIIT undergrad, I'm committed to delivering high-quality, performant applications with a strong architectural foundation, ensuring they are both efficient and easy to understand. ",

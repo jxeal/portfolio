@@ -13,10 +13,12 @@ const Terminal = () => {
   );
 
   // Format the JSON string
-  const formattedString = JSON.stringify(processedData, null, 2).replace(
+  let formattedString = JSON.stringify(processedData, null, 2).replace(
     /\\"/g,
     '"'
   );
+  formattedString =
+    "{ " + formattedString.substring(2, formattedString.length - 2) + " }";
 
   return (
     //@ts-ignore
@@ -26,12 +28,15 @@ const Terminal = () => {
         <div className="header-button red border-[#fdbc3d] w-3 h-3 rounded-full ml-2 border-1 border-solid broder-1 bg-[#ffb524]"></div>
         <div className="header-button red bg-[#33c948] w-3 h-3 rounded-full ml-2 border-1 border-solid border-[#2dbb41]"></div>
       </div>
-      <div className="terminal-window bg-terminal rounded-b-md px-8 py-3 h-[340] text-white overflow-y-auto">
+      <div className="terminal-window flex bg-terminal rounded-b-md px-6 py-3 h-fit text-white overflow-y-auto items-end ">
         <TypingAnimation
-          className="text-base "
-          style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}
+          className="lg:text-xl lg:leading-8 md:text-xl text-base leading-7 font-mono whitespace-pre-wrap"
+          style={{
+            whiteSpace: "pre-wrap",
+            wordBreak: "break-word",
+          }}
         >
-          {`> ${data.first_name}.info${"\n"}${formattedString}`}
+          {`~% ${data.first_name}.info${"\n"}${formattedString}`}
         </TypingAnimation>
       </div>
     </div>
