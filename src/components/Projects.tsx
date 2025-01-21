@@ -1,7 +1,17 @@
+import { ProjectData } from "@/components/ui/ProjectData";
 import React from "react";
 
 const Projects = () => {
-  return <div>Projects</div>;
+  return (
+    <div
+    // className="mx-auto max-w-[1600]"
+    >
+      <div className="text-4xl pl-6 md:text-4xl font-mono flex flex-row justify-center  mx-auto p-6">
+        <b>Projects</b>
+      </div>
+      <ProjectData />
+    </div>
+  );
 };
 
 export default Projects;

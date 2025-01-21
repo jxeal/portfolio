@@ -9,6 +9,11 @@ export default {
   ],
   theme: {
   	extend: {
+		// theme:{
+		// 	container: {
+		// 		center: true,
+		// 	  },
+		// },
 		keyframes: {
 			blink: {
 			  "0%, 100%": { opacity: "1" },
@@ -71,8 +76,24 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		fontFamily: {
+			mono: [
+				"Courier",
+				"SF Mono",
+				"Fira Code",
+				"JetBrains Mono",
+				"Cascadia Code",
+				"Source Code Pro",
+				"Inconsolata",
+				"IBM Plex Mono",
+				"Menlo",
+				"Monaco",
+				"monospace",
+			  ],
+			
+		},
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),require('tailwind-scrollbar')],
 } satisfies Config;

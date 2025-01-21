@@ -1,6 +1,14 @@
 import React from "react";
 import { data } from "@/data/data";
 import TypingAnimation from "./ui/typing-animation";
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandInstagram,
+  IconBrandX,
+  IconMail,
+  IconFileText,
+} from "@tabler/icons-react";
 
 const About = () => {
   return (
@@ -14,13 +22,14 @@ const About = () => {
           />
         </div>
 
-        <TypingAnimation duration={75} className="text-6xl pl-6">
+        <TypingAnimation duration={75} className="text-4xl pl-6 md:text-6xl ">
           {data.name}
         </TypingAnimation>
-        <span className=" bg-white animate-blink h-14 w-6">&nbsp;</span>
       </div>
 
-      <div className="p-4 text-xl">{data.description}</div>
+      <div className="p-4 mt-4 text-base md:text-xl leading-8">
+        {data.description}
+      </div>
 
       <div className="flex flex-row justify-center lg:gap-10 lg:p-5 gap-5 p-3">
         <a
@@ -28,60 +37,35 @@ const About = () => {
           href={`mailto:${data.contact_info.email}`}
           target="_blank"
         >
-          <img
-            src="/contactIcon/email.svg"
-            alt="Email-icon"
-            className="w-8 h-6"
-          />
-          {/* {data.contact_info.email} */}
+          <IconMail />
         </a>
         <a
           className="flex flex-row"
           href={data.contact_info.github.link}
           target="_blank"
         >
-          <img
-            src="/contactIcon/github.svg"
-            alt="Github-icon"
-            className="w-8 h-6"
-          />
-          {/* {data.contact_info.github.username} */}
+          <IconBrandGithub />
         </a>
         <a
           className="flex flex-row"
           href={data.contact_info.linkedin.link}
           target="_blank"
         >
-          <img
-            src="/contactIcon/linkedin.svg"
-            alt="LinkedIn-icon"
-            className="w-8 h-6"
-          />
-          {/* {data.contact_info.linkedin.username} */}
+          <IconBrandLinkedin />
         </a>
         <a
           className="flex flex-row"
           href={data.contact_info.insta.link}
           target="_blank"
         >
-          <img
-            src="/contactIcon/instagram.svg"
-            alt="Instagram-icon"
-            className="w-8 h-6"
-          />
-          {/* {data.contact_info.insta.username} */}
+          <IconBrandInstagram />
         </a>
         <a
           className="flex flex-row"
           href={data.contact_info.x_twitter.link}
           target="_blank"
         >
-          <img
-            src="/contactIcon/twitter.svg"
-            alt="Twitter-icon"
-            className="w-8 h-6"
-          />
-          {/* {data.contact_info.x_twitter.username} */}
+          <IconBrandX />
         </a>
         <a
           className="flex flex-row lg:px-5 md:px-8"
@@ -89,11 +73,7 @@ const About = () => {
           target="_blank"
         >
           {data.resume.title}
-          <img
-            src="/contactIcon/resume.svg"
-            alt="Resume-icon"
-            className="w-8 h-6"
-          />
+          <IconFileText />
         </a>
       </div>
     </div>
