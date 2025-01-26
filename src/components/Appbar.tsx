@@ -8,7 +8,7 @@ export default function Appbar() {
       <div>
         <h1 className="text-2xl font-semibold md:text-4xl">
           <a href="#hero">{data.alias}</a>
-          <span className="text-accent text-4xl ">.</span>
+          <span className="text-black text-4xl bg-[#0cc0df]">.</span>
         </h1>
       </div>
       <div className="flex justify-between gap-4 md:gap-8 items-center">

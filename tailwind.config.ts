@@ -37,7 +37,7 @@ export default {
   				key: '#e7d184'
   			},
   			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
+  				DEFAULT: '#0cc0df',
   				hover: '#1d4ed8',
   				foreground: 'hsl(var(--accent-foreground))'
   			},

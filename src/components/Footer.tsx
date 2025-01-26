@@ -30,8 +30,15 @@ export default function Footer() {
         </div>
       </div>
       <div className="pb-10 mb-20 md:mb-0 text-sm text-center ">
-        Made with <a href="https://nextjs.org/">Next.js</a> & &#128153; by Sayak
-        Majumder.
+        Made with{" "}
+        <a
+          href="https://nextjs.org/"
+          target="_blank"
+          className="hover:text-accent"
+        >
+          Next.js
+        </a>{" "}
+        & &#128153; by Sayak Majumder.
         <br />
         Inspired from{" "}
         <a

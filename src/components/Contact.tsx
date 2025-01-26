@@ -24,8 +24,9 @@ import { Textarea } from "./ui/textarea";
 import { toast } from "react-toastify";
 import { data } from "@/data/data";
 const importedEmail = data.contact_info.email;
+const importedUrl = data.url;
 
-function checkValidName(name: string): Boolean {
+function checkValidName(name: string): boolean {
   if (name.length < 0) return false;
   if (name.length > 30) return false;
   return true;
@@ -65,7 +66,9 @@ export default function Contact({
   const [service, setService] = useState("");
   const [message, setMessage] = useState("");
 
-  const sendMessage = async (e: any) => {
+  const sendMessage = async (
+    e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>
+  ) => {
     e.preventDefault();
     checkValidEmail(email);
     if (email == "" && phone == "") {
@@ -77,7 +80,7 @@ export default function Contact({
       return;
     }
     try {
-      const subject = "Contact Request From SayakCodes.in";
+      const subject = "Contact Request From " + importedUrl;
       const body = {
         name,
         email_id: email,
@@ -108,7 +111,11 @@ export default function Contact({
       if (data.status === 200) {
         toast.dismiss();
         toast.success("Email Sent Successfully 🎉");
-        dialogTriggger && dialogTriggger.setIsOpen(false);
+        // dialogTriggger && dialogTriggger.setIsOpen(false);
+        <Dialog
+          open={dialogTriggger?.isOpen || false}
+          onOpenChange={dialogTriggger?.setIsOpen}
+        ></Dialog>;
         return;
       } else {
         toast.dismiss();
@@ -136,11 +143,11 @@ export default function Contact({
         )}
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Let's Work Together</DialogTitle>
+            <DialogTitle>Let&apos;s Work Together</DialogTitle>
             <DialogDescription>
-              Let's build something amazing together! Have a project in mind or
-              simply want to connect? Feel free to reach out. I'm eager to
-              discuss your ideas and explore potential collaborations.
+              Let&apos;s build something amazing together! Have a project in
+              mind or simply want to connect? Feel free to reach out. I&apos;m
+              eager to discuss your ideas and explore potential collaborations.
             </DialogDescription>
           </DialogHeader>
 
@@ -189,9 +196,6 @@ export default function Contact({
                   </SelectItem>
                   <SelectItem value="Back End Development">
                     Backend Development
-                  </SelectItem>
-                  <SelectItem value="Robotics/Embedded Systems">
-                    Robotics/Embedded Systems
                   </SelectItem>
                   <SelectItem value="Others">Others</SelectItem>
                 </SelectGroup>

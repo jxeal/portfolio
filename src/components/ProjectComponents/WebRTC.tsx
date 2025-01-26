@@ -9,8 +9,8 @@ export default function WebRTC() {
       user interface.
       <br />
       <br />
-      Backend: Express.js: Handles server-side logic and API endpoints.
-      Socket.io: Manages real-time signaling for establishing WebRTC
+      Backend: Express.js- Handles server-side logic and API endpoints.
+      Socket.io- Manages real-time signaling for establishing WebRTC
       connections.
     </div>
   );

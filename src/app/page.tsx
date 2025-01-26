@@ -3,7 +3,10 @@ import { Appbar, Hero, Projects, Footer } from "../components";
 export default function Home() {
   return (
     <div>
-      <main className="flex flex-col max-w-[1400] mx-auto p-10">
+      <main
+        className="flex flex-col max-w-[1600] mx-auto p-10"
+        style={{ maxWidth: "1600px" }}
+      >
         <Appbar />
         <section id="hero">
           <Hero />
@@ -11,7 +14,6 @@ export default function Home() {
         <section id="projects">
           <Projects />
         </section>
-        {/*<ContactMe /> */}
         <Footer />
       </main>
     </div>

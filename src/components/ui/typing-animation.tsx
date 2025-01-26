@@ -85,7 +85,7 @@ export default function TypingAnimation({
       {...props}
     >
       {displayedText}
-      <span className=" bg-white animate-blink ">&nbsp;</span>
+      <span className="  animate-blink bg-accent">&nbsp;</span>
     </MotionComponent>
   );
 }

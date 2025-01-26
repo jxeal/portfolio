@@ -18,10 +18,9 @@ const Terminal = () => {
     '"'
   );
   formattedString =
-    "{ " + formattedString.substring(2, formattedString.length - 2) + " }";
+    "{ " + formattedString.substring(2, formattedString.length - 2) + "\n}";
 
   return (
-    //@ts-ignore
     <div className="terminal">
       <div className="terminal-header bg-terminal-header h-7 flex justify-start items-center rounded-t-lg ">
         <div className="header-button red bg-[#f96256] w-3 h-3 rounded-full ml-3 border-1 border-solid border-[#f65549]"></div>

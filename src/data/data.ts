@@ -1,13 +1,12 @@
-import { Terminal } from "lucide-react";
-
 export const data = {
     alias: "zhunxeal",
+    url: "sayakcodes.in",
     name: "Sayak Majumder",
     description:
       "As a KIIT undergrad, I'm committed to delivering high-quality, performant applications with a strong architectural foundation, ensuring they are both efficient and easy to understand. ",
     first_name: "Sayak",
     contact_info: {
-      email: "jxeal.sayak@gmail.com",
+      email: "jxeal.sayak@gmail.com", //Enter the email where you want to receive the contact you mails
       phone: "+91 9733726522",
       linkedin: {
         username: "sayak-majumder",
