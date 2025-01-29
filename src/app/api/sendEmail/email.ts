@@ -1315,7 +1315,7 @@ export default function emailFunc(name:string, email_id:string, phone:number, se
                                               src="https://eubqlnu.stripocdn.email/content/assets/img/social-icons/rounded-white/x-rounded-white.png"
                                               alt="X"
                                               title="X"
-                                              height="24"
+                                              height="40"
                                               style="
                                                 display: block;
                                                 font-size: 16px;
@@ -1347,7 +1347,7 @@ export default function emailFunc(name:string, email_id:string, phone:number, se
                                               src="https://eubqlnu.stripocdn.email/content/assets/img/social-icons/rounded-white/instagram-rounded-white.png"
                                               alt="Ig"
                                               title="Instagram"
-                                              height="24"
+                                              height="40"
                                               style="
                                                 display: block;
                                                 font-size: 16px;
@@ -1377,7 +1377,7 @@ export default function emailFunc(name:string, email_id:string, phone:number, se
                                             "
                                             ><img
                                               title="GitHub"
-                                              height="24"
+                                              height="40"
                                               src="https://eubqlnu.stripocdn.email/content/assets/img/other-icons/rounded-white/github-rounded-white.png"
                                               alt="GitHub"
                                               style="
