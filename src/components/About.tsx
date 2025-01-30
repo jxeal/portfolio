@@ -34,44 +34,44 @@ const About = () => {
         {data.description}
       </div>
 
-      <div className="flex flex-row justify-center lg:gap-10 lg:p-5 gap-5 p-3">
+      <div className="flex flex-row justify-center lg:gap-10 lg:p-5 gap-5 p-3 ">
         <a
-          className="flex flex-row"
+          className="flex flex-row hover:text-accent"
           href={`mailto:${data.contact_info.email}`}
           target="_blank"
         >
           <IconMail />
         </a>
         <a
-          className="flex flex-row"
+          className="flex flex-row hover:text-accent"
           href={data.contact_info.github.link}
           target="_blank"
         >
           <IconBrandGithub />
         </a>
         <a
-          className="flex flex-row"
+          className="flex flex-row hover:text-accent"
           href={data.contact_info.linkedin.link}
           target="_blank"
         >
           <IconBrandLinkedin />
         </a>
         <a
-          className="flex flex-row"
+          className="flex flex-row hover:text-accent"
           href={data.contact_info.insta.link}
           target="_blank"
         >
           <IconBrandInstagram />
         </a>
         <a
-          className="flex flex-row"
+          className="flex flex-row hover:text-accent"
           href={data.contact_info.x_twitter.link}
           target="_blank"
         >
           <IconBrandX />
         </a>
         <a
-          className="flex flex-row lg:px-5 md:px-8"
+          className="flex flex-row lg:px-5 md:px-8 hover:text-accent"
           href={data.resume.link}
           target="_blank"
         >

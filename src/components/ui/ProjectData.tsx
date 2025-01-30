@@ -110,6 +110,17 @@ export function ProjectData() {
                     </Button>
                   </div>
                 </div>
+                <motion.div
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <span className="text-accent bg-neutral-200 dark:bg-neutral-700 px-5 py-1 my-1 mx-5 rounded-3xl ">
+                    {active.techStacks}
+                  </span>
+                </motion.div>
+
                 <div className="pt-4 relative px-4">
                   <motion.div
                     layout
@@ -132,7 +143,7 @@ export function ProjectData() {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer "
+            className="p-4 flex flex-col hover:bg-neutral-300 dark:hover:bg-neutral-800 rounded-xl cursor-pointer "
           >
             <div className="flex gap-4 flex-col w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -157,6 +168,9 @@ export function ProjectData() {
                 >
                   {card.description}
                 </motion.p>
+                <div className="text-accent bg-neutral-200 dark:bg-neutral-700  px-3 py-1 my-1 rounded-3xl">
+                  {card.techStacks}
+                </div>
               </div>
             </div>
           </motion.div>

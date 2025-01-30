@@ -27,7 +27,7 @@ export const data = {
     },
     resume: {
       title: "resume.pdf",
-      link: "",
+      link: "https://drive.google.com/file/d/1vwvfmZOGPvk7hZcyVkBmpCHya0wIJ37a/view?usp=sharing",
     },
     terminal:{
       location: "Kolkata, West Bengal",
