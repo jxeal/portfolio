@@ -60,6 +60,7 @@ export function ProjectData() {
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
+                  unoptimized
                   priority
                   width={200}
                   height={200}
@@ -148,6 +149,7 @@ export function ProjectData() {
             <div className="flex gap-4 flex-col w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
+                  unoptimized
                   width={100}
                   height={100}
                   src={card.src || "/placeholder.svg"}
