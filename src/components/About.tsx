@@ -17,6 +17,7 @@ const About = () => {
       <div className="flex flex-row items-center">
         <div className="w-40 h-50 overflow-hidden rounded-full">
           <Image
+            unoptimized
             src="/images/dp.jpg"
             alt="Profile Image"
             className="w-full h-full object-cover transform scale-125"
