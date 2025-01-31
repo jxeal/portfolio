@@ -7,7 +7,7 @@ export default function Appbar() {
     <header className="appbar-container flex justify-between items-center pb-10 ">
       <div>
         <h1 className="text-2xl font-extrabold md:text-4xl">
-          <a href="#hero" className=" pl-3 md:pl-5">
+          <a href="#hero" className=" md:pl-5">
             {data.alias}
           </a>
           <span className="text-3xl md:text-4xl font-extrabold text-accent">
