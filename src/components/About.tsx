@@ -31,9 +31,7 @@ const About = () => {
         </TypingAnimation>
       </div>
 
-      <div className="p-4 mt-4 text-base md:text-xl leading-8">
-        {data.description}
-      </div>
+      <div className="p-4 mt-4 text-base md:text-xl">{data.description}</div>
 
       <div className="flex flex-row justify-center lg:gap-10 lg:p-5 gap-5 p-3 ">
         <a
@@ -72,11 +70,11 @@ const About = () => {
           <IconBrandX />
         </a>
         <a
-          className="flex flex-row lg:px-5 md:px-8 hover:text-accent"
+          className="flex flex-row px-2 lg:px-5 md:px-8 hover:text-accent"
           href={data.resume.link}
           target="_blank"
         >
-          {data.resume.title}
+          <span className="hidden md:block">{data.resume.title}</span>
           <IconFileText />
         </a>
       </div>

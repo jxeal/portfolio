@@ -1,1 +1,1 @@
-export {default as WebRTC} from "./WebRTC"
+export { default as WebRTC } from "./WebRTC";
