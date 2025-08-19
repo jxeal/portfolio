@@ -21,8 +21,8 @@ const About = () => {
             src="/images/dp.jpg"
             alt="Profile Image"
             className="w-full h-full object-cover transform scale-125"
-            width={40}
-            height={50}
+            width={0}
+            height={0}
           />
         </div>
 

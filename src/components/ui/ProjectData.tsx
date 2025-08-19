@@ -46,17 +46,17 @@ export function ProjectData() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10"
+            className="fixed inset-0 bg-black/30 dark:bg-white/30 h-full w-full z-10"
           />
         )}
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[550px] max-h-[90vh] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden overflow-y-auto scrollbar-none"
+              className="w-full max-w-[90vw] md:max-w-[550] max-h-[70vh] md:max-h-[80vh] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden overflow-y-auto scrollbar-none rounded-xl"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -66,7 +66,7 @@ export function ProjectData() {
                   height={200}
                   src={active.src || "/placeholder.svg"}
                   alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-center"
+                  className="w-full h-80 max-h-[30vh] md:max-h-[40vh] sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-center"
                 />
               </motion.div>
 
@@ -88,27 +88,31 @@ export function ProjectData() {
                   </div>
 
                   <div className="justify-end gap-6 space-x-2">
-                    <Button
-                      variant={"outline"}
-                      className="p-4 w-12 h-12"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.open(active.gitLink, "_blank");
-                      }}
-                    >
-                      <IconBrandGithub />
-                    </Button>
+                    {active.gitLink && (
+                      <Button
+                        variant={"outline"}
+                        className="p-4 w-12 h-12"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open(active.gitLink, "_blank");
+                        }}
+                      >
+                        <IconBrandGithub />
+                      </Button>
+                    )}
 
-                    <Button
-                      variant={"outline"}
-                      className="p-4 w-12 h-12"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.open(active.liveLink, "_blank");
-                      }}
-                    >
-                      <ExternalLink />
-                    </Button>
+                    {active.liveLink && (
+                      <Button
+                        variant={"outline"}
+                        className="p-4 w-12 h-12"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.open(active.liveLink, "_blank");
+                        }}
+                      >
+                        <ExternalLink />
+                      </Button>
+                    )}
                   </div>
                 </div>
                 <motion.div
@@ -117,7 +121,7 @@ export function ProjectData() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                 >
-                  <span className="text-accent bg-neutral-200 dark:bg-neutral-700 px-5 py-1 my-1 mx-5 rounded-3xl ">
+                  <span className="text-accent bg-neutral-200 dark:bg-neutral-700 flex w-fit p-1 my-1 mx-2 px-4 rounded-3xl ">
                     {active.techStacks}
                   </span>
                 </motion.div>
@@ -144,7 +148,7 @@ export function ProjectData() {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col hover:bg-neutral-300 dark:hover:bg-neutral-800 rounded-xl cursor-pointer "
+            className="p-4 flex flex-col bg-gray-400 dark:bg-terminal hover:bg-neutral-300 dark:hover:bg-neutral-800 rounded-xl cursor-pointer "
           >
             <div className="flex gap-4 flex-col w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -157,7 +161,7 @@ export function ProjectData() {
                   className="h-60 w-full  rounded-lg object-cover object-center"
                 />
               </motion.div>
-              <div className="flex justify-center items-center flex-col">
+              <div className="flex justify-center items-center flex-col font-['Clash_Display']">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
                   className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-xl"
@@ -170,7 +174,8 @@ export function ProjectData() {
                 >
                   {card.description}
                 </motion.p>
-                <div className="text-accent bg-neutral-200 dark:bg-neutral-700  px-3 py-1 my-1 rounded-3xl">
+                <div className="mt-1 -mb-1 text-lg">{card.type}</div>
+                <div className="text-accent bg-neutral-200 dark:bg-neutral-700 px-3 py-1 my-1 rounded-3xl">
                   {card.techStacks}
                 </div>
               </div>

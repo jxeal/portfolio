@@ -11,15 +11,15 @@ export default function Appbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="appbar-container flex justify-between items-center pb-10 relative">
+    <header className="sticky top-0 z-50 appbar-container flex justify-between items-center px-4 py-3 mb-10 bg-white/75 dark:bg-black/75 rounded-xl max-w-[95dvw] md:max-w-[780] mx-auto">
       <div>
         <h1 className="text-3xl font-extrabold md:text-4xl">
-          <a href="#hero" className="md:pl-5">
+          <a href="#hero" className="">
             {data.alias}
+            <span className="text-3xl md:text-4xl font-extrabold text-accent">
+              .
+            </span>
           </a>
-          <span className="text-3xl md:text-4xl font-extrabold text-accent">
-            .
-          </span>
         </h1>
       </div>
 
@@ -33,20 +33,22 @@ export default function Appbar() {
         </button>
 
         <div
-          className={`absolute right-0 mt-2 w-40 p-2 rounded-lg shadow-lg bg-background bg-opacity-100 transition-opacity duration-300 ${
+          className={`absolute right-0 mt-2 w-40 p-2 rounded-lg shadow-lg border transition-opacity duration-300 ${
             isOpen
               ? "opacity-100 scale-100"
               : "opacity-0 scale-95 pointer-events-none"
-          }`}
+          } bg-terminal border-gray-200 dark:border-black`}
         >
           <div className="flex flex-col space-y-2 items-center text-center">
             <Contact />
-            <a
-              className="hover:text-accent"
-              href="#projects"
-              onClick={() => setIsOpen(false)}
-            >
-              <Dialog>Projects</Dialog>
+            <a className="hover:text-accent" href="#projects">
+              <Button
+                className="bg-background hover:bg-background text-base hover:text-accent"
+                variant={"ghost"}
+                onClick={() => setIsOpen(false)}
+              >
+                Projects
+              </Button>
             </a>
             <div className="flex justify-end">
               <ThemeToggle />
@@ -56,10 +58,15 @@ export default function Appbar() {
       </div>
 
       {/* Navigation Links (Desktop) */}
-      <div className="hidden md:flex justify-between gap-4 md:gap-8 items-center">
+      <div className="hidden md:flex justify-between gap-4 items-center">
         <Contact />
         <a className="hover:text-accent" href="#projects">
-          Projects
+          <Button
+            className="bg-background hover:bg-background text-base hover:text-accent"
+            variant={"ghost"}
+          >
+            Projects
+          </Button>
         </a>
         <div className="flex justify-end">
           <ThemeToggle />

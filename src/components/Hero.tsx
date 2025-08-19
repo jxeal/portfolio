@@ -4,7 +4,7 @@ import Terminal from "./Terminal";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col">
+    <div className="">
       <About />
       <Terminal />
     </div>
