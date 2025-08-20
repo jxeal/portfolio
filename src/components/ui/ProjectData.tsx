@@ -174,7 +174,7 @@ export function ProjectData() {
                 >
                   {card.description}
                 </motion.p>
-                <div className="mt-1 -mb-1 text-lg">{card.type}</div>
+                <div className="mt-1 mb-1 text-lg">{card.type}</div>
                 <div className="text-accent bg-neutral-200 dark:bg-neutral-500 px-3 py-1 my-1 rounded-3xl">
                   {card.techStacks}
                 </div>
