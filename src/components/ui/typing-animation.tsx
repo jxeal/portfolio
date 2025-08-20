@@ -11,6 +11,7 @@ interface TypingAnimationProps extends MotionProps {
   delay?: number;
   as?: React.ElementType;
   startOnView?: boolean;
+  bar?: boolean;
 }
 
 export default function TypingAnimation({
@@ -20,6 +21,7 @@ export default function TypingAnimation({
   delay = 0,
   as: Component = "div",
   startOnView = false,
+  bar = false,
   ...props
 }: TypingAnimationProps) {
   const MotionComponent = motion.create(Component, {
@@ -85,7 +87,9 @@ export default function TypingAnimation({
       {...props}
     >
       {displayedText}
-      {/* <span className="  animate-blink bg-accent">&nbsp;</span> */}
+      {bar && (
+        <span className="animate-blink bg-accent">&nbsp;&nbsp;&nbsp;</span>
+      )}
     </MotionComponent>
   );
 }

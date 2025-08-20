@@ -6,8 +6,8 @@ const Projects = () => {
     <div
     // className="mx-auto max-w-[1600]"
     >
-      <div className="text-2xl md:text-4xl font-mono flex flex-row justify-center mx-auto my-5">
-        <b>Experience/ Projects</b>
+      <div className="text-2xl md:text-4xl font-['Clash_Display'] flex flex-row justify-center mx-auto my-5">
+        <b>Experience / Projects</b>
       </div>
       <ProjectData />
     </div>

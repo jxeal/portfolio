@@ -11,14 +11,11 @@ export default function Appbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 appbar-container flex justify-between items-center px-4 py-3 mb-10 bg-white/75 dark:bg-black/75 rounded-xl max-w-[95dvw] md:max-w-[780] mx-auto">
+    <header className="sticky top-0 z-50 appbar-container flex justify-between items-center px-4 pt-3 pb-1 mb-2 bg-white/75 dark:bg-black/75 rounded-xl max-w-[95dvw] md:max-w-[780] mx-auto font-['Clash_Display']">
       <div>
-        <h1 className="text-3xl font-extrabold md:text-4xl">
+        <h1 className="text-3xl font-semibold md:text-4xl">
           <a href="#hero" className="">
             {data.alias}
-            <span className="text-3xl md:text-4xl font-extrabold text-accent">
-              .
-            </span>
           </a>
         </h1>
       </div>
@@ -37,7 +34,7 @@ export default function Appbar() {
             isOpen
               ? "opacity-100 scale-100"
               : "opacity-0 scale-95 pointer-events-none"
-          } bg-terminal border-gray-200 dark:border-black`}
+          } bg-terminal border-2 border-gray-200 dark:border-black`}
         >
           <div className="flex flex-col space-y-2 items-center text-center">
             <Contact />

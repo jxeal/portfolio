@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="footer flex flex-col justify-center items-center">
+    <div className="footer flex flex-col justify-center items-center font-['Clash_Display']">
       <div className="mt-16 h-[1px] w-full bg-foreground"></div>
       <div className="flex justify-center items-center gap-5 p-8 text-lg">
         <Contact />
@@ -29,7 +29,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="pb-10 mb-20 md:mb-0 text-sm text-center ">
+      <div className="pb-10 text-sm text-center ">
         Made with{" "}
         <a
           href="https://nextjs.org/"

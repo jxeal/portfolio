@@ -26,7 +26,11 @@ const About = () => {
           />
         </div>
 
-        <TypingAnimation duration={75} className="text-4xl pl-6 md:text-6xl ">
+        <TypingAnimation
+          duration={75}
+          className="text-4xl pl-6 md:text-6xl "
+          bar={true}
+        >
           {data.name}
         </TypingAnimation>
       </div>
