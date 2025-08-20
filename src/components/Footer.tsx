@@ -11,7 +11,7 @@ export default function Footer() {
         <div>||</div>
         <div>
           <Link
-            className=" text-base hover:text-accent "
+            className="text-base font-medium hover:text-accent "
             href={data.contact_info.linkedin.link}
             target="_blank"
           >
@@ -21,7 +21,7 @@ export default function Footer() {
         <div>||</div>
         <div>
           <Link
-            className=" text-base hover:text-accent "
+            className="text-base font-medium hover:text-accent "
             href={data.contact_info.github.link}
             target="_blank"
           >

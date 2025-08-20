@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 export default {
+  important: true,
   darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,6 +21,7 @@ export default {
         blink: "blink 900ms infinite",
       },
       colors: {
+        ...colors,
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {

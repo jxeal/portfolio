@@ -33,8 +33,8 @@ export const data = {
     interests: [
       "Coding",
       " Engineering",
+      " Low Level Programming",
       " Valorant",
-      " Genshin Impact",
       " Teaching",
       " Exploring System Designs",
     ],

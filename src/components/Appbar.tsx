@@ -5,18 +5,25 @@ import { data } from "@/data/data";
 import ThemeToggle from "../components/ThemeToggle";
 import Contact from "./Contact";
 import { Button } from "./ui/button";
-import { Dialog } from "./ui/dialog";
 
 export default function Appbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 appbar-container flex justify-between items-center px-4 pt-3 pb-1 mb-2 bg-white/75 dark:bg-black/75 rounded-xl max-w-[95dvw] md:max-w-[780] mx-auto font-['Clash_Display']">
+    <header
+      className="sticky top-0 z-10 appbar-container flex justify-between items-center px-4 pt-3 pb-2 mb-2 bg-white/50 dark:bg-black/50 rounded-xl max-w-[95dvw] md:max-w-[780] mx-auto font-['Clash_Display']"
+      style={{
+        backdropFilter: "blur(4px)",
+        WebkitBackdropFilter: "blur(4px)",
+      }}
+    >
       <div>
         <h1 className="text-3xl font-semibold md:text-4xl">
-          <a href="#hero" className="">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             {data.alias}
-          </a>
+          </button>
         </h1>
       </div>
 
@@ -38,36 +45,38 @@ export default function Appbar() {
         >
           <div className="flex flex-col space-y-2 items-center text-center">
             <Contact />
-            <a className="hover:text-accent" href="#projects">
-              <Button
-                className="bg-background hover:bg-background text-base hover:text-accent"
-                variant={"ghost"}
-                onClick={() => setIsOpen(false)}
-              >
-                Projects
-              </Button>
-            </a>
-            <div className="flex justify-end">
-              <ThemeToggle />
-            </div>
+            <Button
+              className="bg-background hover:bg-background text-base hover:text-accent"
+              variant={"ghost"}
+              onClick={() => {
+                setIsOpen(false);
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Projects
+            </Button>
+            <ThemeToggle />
           </div>
         </div>
       </div>
 
       {/* Navigation Links (Desktop) */}
-      <div className="hidden md:flex justify-between gap-4 items-center">
+      <div className="hidden md:flex gap-4 items-center">
         <Contact />
-        <a className="hover:text-accent" href="#projects">
-          <Button
-            className="bg-background hover:bg-background text-base hover:text-accent"
-            variant={"ghost"}
-          >
-            Projects
-          </Button>
-        </a>
-        <div className="flex justify-end">
-          <ThemeToggle />
-        </div>
+        <Button
+          className="bg-background hover:bg-background text-base hover:text-accent"
+          variant={"ghost"}
+          onClick={() =>
+            document
+              .getElementById("projects")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Projects
+        </Button>
+        <ThemeToggle />
       </div>
     </header>
   );

@@ -115,16 +115,19 @@ export function ProjectData() {
                     )}
                   </div>
                 </div>
-                <motion.div
-                  layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <span className="text-accent bg-neutral-200 dark:bg-neutral-700 flex w-fit p-1 my-1 mx-2 px-4 rounded-3xl ">
-                    {active.techStacks}
-                  </span>
-                </motion.div>
+                <div>
+                  <motion.div
+                    layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <div className="p-1 mx-2 px-4 text-lg">{active.type}</div>
+                    <span className="text-accent bg-neutral-200 dark:bg-neutral-700 flex w-fit p-1 my-1 mx-2 px-4 rounded-3xl ">
+                      {active.techStacks}
+                    </span>
+                  </motion.div>
+                </div>
 
                 <div className="pt-4 relative px-4">
                   <motion.div
