@@ -56,7 +56,7 @@ export function ProjectData() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[90vw] md:max-w-[550] max-h-[70vh] md:max-h-[80vh] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden overflow-y-auto scrollbar-none rounded-xl"
+              className="w-full max-w-[90vw] md:max-w-[550px] max-h-[70vh] md:max-h-[80vh] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden overflow-y-auto scrollbar-none rounded-xl"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
