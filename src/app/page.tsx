@@ -1,4 +1,4 @@
-import { Appbar, Hero, Projects, Footer, About, Terminal } from "../components";
+import { Footer, Hero, Projects } from "@/components";
 
 export default function Home() {
   return (
