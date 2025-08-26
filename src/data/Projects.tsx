@@ -9,15 +9,20 @@ export const WebRTC = () => {
       <span className="text-sm md:text-lg lg:text-xl font-semibold">
         Frontend:-{" "}
       </span>{" "}
-      Built with Vanilla JavaScript, offering a lightweight and fast user
-      interface.
+      Built with Next.js, providing a modern, fast, and scalable user interface.
       <br />
       <br />
       <span className="text-sm md:text-lg lg:text-xl font-semibold">
         Backend:-{" "}
       </span>
-      Express.js- Handles server-side logic and API endpoints. Socket.io-
-      Manages real-time signaling for establishing WebRTC connections.
+      Next.js server (API routes) and Express.js {"-"} manage server-side logic,
+      socket storage, and SDP exchange.
+      <br />
+      <br />
+      <span className="text-sm md:text-lg lg:text-xl font-semibold">
+        Socket.io:-{" "}
+      </span>
+      Enables real-time signaling for establishing WebRTC connections.
     </div>
   );
 };
