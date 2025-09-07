@@ -26,6 +26,7 @@ export const data = {
   },
   resume: {
     title: "resume.pdf",
+    mobile_title: "resume",
     link: "https://resume.sayakcodes.in",
   },
   terminal: {

@@ -141,10 +141,10 @@ export default function Contact({
             </Button>
           </DialogTrigger>
         )}
-        <DialogContent className="sm:max-w-[425px]">
+        <DialogContent className="max-w-[85vw] md:max-w-[600px]">
           <DialogHeader>
             <DialogTitle>Let&apos;s Work Together</DialogTitle>
-            <DialogDescription>
+            <DialogDescription className="text-xs md:text-sm">
               Let&apos;s build something amazing together! Have a project in
               mind or simply want to connect? Feel free to reach out. I&apos;m
               eager to discuss your ideas and explore potential collaborations.

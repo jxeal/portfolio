@@ -12,20 +12,20 @@ export default function Footer() {
         <div>
           <Link
             className="text-base font-medium hover:text-accent "
-            href={data.contact_info.linkedin.link}
+            href={data.contact_info.github.link}
             target="_blank"
           >
-            LinkedIn
+            GitHub
           </Link>
         </div>
         <div>||</div>
         <div>
           <Link
             className="text-base font-medium hover:text-accent "
-            href={data.contact_info.github.link}
+            href={data.contact_info.x_twitter.link}
             target="_blank"
           >
-            GitHub
+            Twitter
           </Link>
         </div>
       </div>

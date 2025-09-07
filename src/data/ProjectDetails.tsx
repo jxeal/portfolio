@@ -1,10 +1,11 @@
-import { WebRTC, SignatureFactory } from "@/data/Projects";
+import { WebRTC, SignatureFactory, Gamewave } from "@/data/Projects";
 
 type Card = {
   title: string;
   description: string;
   techStacks: string;
   src: string;
+  images?: string[];
   liveText?: string;
   liveLink?: string;
   gitText?: string;
@@ -15,10 +16,38 @@ type Card = {
 
 export const ProjectDetails: Card[] = [
   {
+    title: "GameWave",
+    description: "AI game automation company",
+    techStacks: "Next.js TypeScript Supabase Stripe",
+    src: "/gamewave/gamewave-1.jpg",
+    images: [
+      "/gamewave/gamewave-1.jpg",
+      "/gamewave/gamewave-2.jpg",
+      "/gamewave/gamewave-3.jpg",
+      "/gamewave/gamewave-4.jpg",
+      "/gamewave/gamewave-5.jpg",
+      "/gamewave/gamewave-6.jpg",
+    ],
+    liveLink: "https://gamewave.dev/",
+    liveText: "Live Link",
+    type: "Freelance Project",
+    content: <Gamewave />,
+  },
+  {
     title: "Signature Factory",
     description: "E-commerce Website",
     techStacks: "Next.js Prisma Amazon-EC2 Docker",
-    src: "/images/sigfac.jpg",
+    src: "/sigfac/sigfac-1.jpg",
+    images: [
+      "/sigfac/sigfac-1.jpg",
+      "/sigfac/sigfac-2.jpg",
+      "/sigfac/sigfac-3.jpg",
+      "/sigfac/sigfac-4.jpg",
+      "/sigfac/sigfac-5.jpg",
+      "/sigfac/sigfac-6.jpg",
+      "/sigfac/sigfac-7.jpg",
+      "/sigfac/sigfac-8.jpg",
+    ],
     liveLink: "https://sfgifts.in/",
     liveText: "Live Link",
     type: "Freelance Project",

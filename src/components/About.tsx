@@ -74,12 +74,13 @@ const About = () => {
           <IconBrandX />
         </a>
         <a
-          className="flex flex-row px-2 lg:px-5 md:px-8 hover:text-accent"
+          className="flex flex-row hover:text-accent"
           href={data.resume.link}
           target="_blank"
         >
-          <span className="hidden md:block">{data.resume.title}</span>
           <IconFileText />
+          <span className="hidden md:block ml-1">{data.resume.title}</span>
+          <span className="md:hidden ml-1">{data.resume.mobile_title}</span>
         </a>
       </div>
     </div>
