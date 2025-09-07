@@ -97,7 +97,6 @@ export default function Contact({
         error: "Email Sending Failed! ❌",
       });
 
-      //TODO: use Promise to make this better
       const res = await fetch("/api/sendEmail", {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -108,10 +107,9 @@ export default function Contact({
         }),
       });
       const data = await res.json();
-      if (data.status === 200) {
+      if (res.status === 200) {
         toast.dismiss();
-        toast.success("Email Sent Successfully 🎉");
-        // dialogTriggger && dialogTriggger.setIsOpen(false);
+        toast.success(data.message);
         <Dialog
           open={dialogTriggger?.isOpen || false}
           onOpenChange={dialogTriggger?.setIsOpen}
@@ -119,7 +117,7 @@ export default function Contact({
         return;
       } else {
         toast.dismiss();
-        toast.error("Email Sending Failed! ❌");
+        toast.error(data.message);
       }
     } catch (error) {
       console.log("Error sending Email", error);
