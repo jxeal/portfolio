@@ -17,9 +17,25 @@ export function ProjectData() {
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+  const resetAutoplay = () => {
+    if (!active || typeof active !== "object") return;
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+
+    const imgs = Array.isArray(active.images) ? active.images : [];
+    if (imgs.length === 0) return;
+
+    autoplayRef.current = setInterval(() => {
+      setCurrent((prev) => (prev === imgs.length - 1 ? 0 : prev + 1));
+    }, 2000);
+  };
 
   useEffect(() => {
-    if (active && typeof active === "object") setCurrent(0);
+    setCurrent(0);
+    resetAutoplay();
+    return () => {
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
+    };
   }, [active]);
 
   useEffect(() => {
@@ -69,53 +85,72 @@ export function ProjectData() {
               >
                 {Array.isArray(active.images) && active.images.length > 0 ? (
                   (() => {
-                    const imgs = active.images; // narrowed, always defined here
+                    const imgs = active.images;
                     return (
                       <>
-                        <Image
-                          unoptimized
-                          priority
-                          width={200}
-                          height={200}
-                          src={imgs[current] || "/placeholder.svg"}
-                          alt={`${active.title} - ${current + 1}`}
-                          className="w-full h-80 max-h-[30vh] md:max-h-[40vh] sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-center"
-                        />
+                        {/* Slider container */}
+                        <div className="overflow-hidden w-full h-80 max-h-[30vh] md:max-h-[40vh] relative sm:rounded-tr-lg sm:rounded-tl-lg">
+                          <motion.div
+                            className="flex w-full h-full"
+                            animate={{ x: `-${current * 100}%` }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 30,
+                            }}
+                          >
+                            {imgs.map((img, i) => (
+                              <Image
+                                key={i}
+                                unoptimized
+                                priority
+                                width={200}
+                                height={200}
+                                src={img || "/placeholder.svg"}
+                                alt={`${active.title} - ${i + 1}`}
+                                className="w-full h-80 object-cover object-center flex-shrink-0"
+                              />
+                            ))}
+                          </motion.div>
+                        </div>
 
                         {/* Left control */}
-                        <button
+                        <Button
                           onClick={(e) => {
                             e.stopPropagation();
                             setCurrent((prev) =>
                               prev === 0 ? imgs.length - 1 : prev - 1
                             );
+                            resetAutoplay();
                           }}
                           className="absolute top-1/2 left-3 -translate-y-1/2 bg-black/40 text-white rounded-full p-2"
                         >
-                          ‹
-                        </button>
+                          {"‹"}
+                        </Button>
 
                         {/* Right control */}
-                        <button
+                        <Button
                           onClick={(e) => {
                             e.stopPropagation();
                             setCurrent((prev) =>
                               prev === imgs.length - 1 ? 0 : prev + 1
                             );
+                            resetAutoplay();
                           }}
                           className="absolute top-1/2 right-3 -translate-y-1/2 bg-black/40 text-white rounded-full p-2"
                         >
-                          ›
-                        </button>
+                          {"›"}
+                        </Button>
 
                         {/* Dots */}
                         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
                           {imgs.map((_, i) => (
-                            <button
+                            <Button
                               key={i}
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setCurrent(i);
+                                resetAutoplay();
                               }}
                               className={`w-3 h-3 rounded-full ${
                                 i === current ? "bg-white" : "bg-gray-400"
