@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { data } from "@/data/data";
 import TypingAnimation from "./ui/typing-animation";
 import {
@@ -12,10 +13,24 @@ import {
 import Image from "next/image";
 
 const About = () => {
+  //CTF. Remove the click counter.
+  const [clickCount, setClickCount] = useState(0);
+
+  const handleImageClick = () => {
+    setClickCount((prev) => prev + 1);
+
+    if (clickCount === 9) {
+      window.open("https://ayein.sayakcodes.in", "_blank");
+      setClickCount(0);
+    }
+  };
   return (
     <div className="flex flex-col ">
       <div className="flex flex-row items-center">
-        <div className="w-40 h-50 overflow-hidden rounded-full">
+        <div
+          className="w-40 h-50 overflow-hidden rounded-full"
+          onClick={handleImageClick}
+        >
           <Image
             unoptimized
             src="/images/dp.jpg"
