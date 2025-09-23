@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import colors from "tailwindcss/colors";
+// import colors from "tailwindcss/colors";
 
 export default {
   important: true,
@@ -21,7 +21,7 @@ export default {
         blink: "blink 900ms infinite",
       },
       colors: {
-        ...colors,
+        // ...colors,
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -76,19 +76,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        mono: [
-          "Courier",
-          "SF Mono",
-          "Fira Code",
-          "JetBrains Mono",
-          "Cascadia Code",
-          "Source Code Pro",
-          "Inconsolata",
-          "IBM Plex Mono",
-          "Menlo",
-          "Monaco",
-          "monospace",
-        ],
+        clash: ["Clash Display", "sans-serif"],
       },
     },
   },

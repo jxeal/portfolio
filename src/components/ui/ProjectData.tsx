@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useId, useRef, useState } from "react";
+import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { ProjectDetails } from "../../data/ProjectDetails";
@@ -18,7 +18,7 @@ export function ProjectData() {
   const ref = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
-  const resetAutoplay = () => {
+  const resetAutoplay = useCallback(() => {
     if (!active || typeof active !== "object") return;
     if (autoplayRef.current) clearInterval(autoplayRef.current);
 
@@ -28,7 +28,7 @@ export function ProjectData() {
     autoplayRef.current = setInterval(() => {
       setCurrent((prev) => (prev === imgs.length - 1 ? 0 : prev + 1));
     }, 2000);
-  };
+  }, [active]);
 
   useEffect(() => {
     setCurrent(0);
@@ -36,7 +36,7 @@ export function ProjectData() {
     return () => {
       if (autoplayRef.current) clearInterval(autoplayRef.current);
     };
-  }, [active]);
+  }, [active, resetAutoplay]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
