@@ -1,4 +1,4 @@
-import { WebRTC, SignatureFactory, Gamewave } from "@/data/Projects";
+import { WebRTC, SignatureFactory, Gamewave, ACPProd } from "@/data/Projects";
 
 type Card = {
   title: string;
@@ -15,6 +15,22 @@ type Card = {
 };
 
 export const ProjectDetails: Card[] = [
+  {
+    title: "ACP Production",
+    description: "S3 Bucket based File Storage",
+    techStacks: "Next.js TypeScript AWS-S3",
+    src: "/acpprod/p1.webp",
+    images: [
+      "/acpprod/p1.webp",
+      "/acpprod/p2.webp",
+      "/acpprod/p3.webp",
+      "/acpprod/p4.webp",
+      "/acpprod/p5.webp",
+      "/acpprod/p6.webp",
+    ],
+    type: "Freelance Project",
+    content: <ACPProd />,
+  },
   {
     title: "GameWave",
     description: "AI game automation company",

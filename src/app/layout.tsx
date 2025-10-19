@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ToastContainer } from "react-toastify";
 import { Appbar } from "@/components";
 import Script from "next/script";
+import Prism from "@/components/Prism";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -90,6 +91,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div
+          style={{
+            width: "100%",
+            height: "100vh",
+            position: "fixed",
+            zIndex: "-500",
+          }}
+        >
+          <Prism
+            animationType="3drotate"
+            timeScale={0.5}
+            height={3.5}
+            baseWidth={5.5}
+            scale={3.6}
+            hueShift={0}
+            colorFrequency={4}
+            noise={0}
+            glow={0.7}
+          />
+        </div>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

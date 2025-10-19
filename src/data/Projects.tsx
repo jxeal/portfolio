@@ -97,3 +97,39 @@ export const Gamewave = () => {
     </div>
   );
 };
+
+export const ACPProd = () => {
+  return (
+    <div>
+      <div className="text-sm md:text-lg lg:text-xl font-semibold">
+        Built a secure file-sharing platform using AWS S3 for storage with
+        access restricted to invited users only.
+      </div>
+      <br />
+      <div>
+        <span className="text-sm md:text-lg lg:text-xl font-semibold">
+          Backend & Access Control:-{" "}
+        </span>
+        Developed with Next.js (TypeScript) and AWS SDK to handle file uploads,
+        downloads, and signed URL generation. Access rights are verified through
+        invite-based authorization logic.
+      </div>
+      <br />
+      <div>
+        <span className="text-sm md:text-lg lg:text-xl font-semibold">
+          Authentication:-{" "}
+        </span>
+        Integrated Clerk for secure user authentication and session management.
+        Only verified and invited users can access or upload files.
+      </div>
+      <br />
+      <div>
+        <span className="text-sm md:text-lg lg:text-xl font-semibold">
+          Security & Data Handling:-{" "}
+        </span>
+        Used S3 presigned URLs for time-limited file access, ensuring data
+        privacy and preventing unauthorized sharing.
+      </div>
+    </div>
+  );
+};

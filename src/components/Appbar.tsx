@@ -11,7 +11,7 @@ export default function Appbar() {
 
   return (
     <header
-      className="sticky top-0 z-10 appbar-container flex justify-between items-center px-4 pt-3 pb-2 mb-2 bg-white/50 dark:bg-black/50 rounded-xl max-w-[95dvw] md:max-w-[780px] mx-auto font-['Clash_Display']"
+      className="sticky top-0 z-10 appbar-container flex justify-between items-center px-4 pt-3 pb-2 mb-2 bg-white/50 dark:bg-black/50 rounded-xl max-w-[100dvw] md:max-w-[780px] mx-auto font-['Clash_Display']"
       style={{
         backdropFilter: "blur(4px)",
         WebkitBackdropFilter: "blur(4px)",
@@ -46,7 +46,7 @@ export default function Appbar() {
           <div className="flex flex-col space-y-2 items-center text-center">
             <Contact />
             <Button
-              className="bg-background hover:bg-background text-base hover:text-accent"
+              className="bg-transparent hover:bg-transparent text-base hover:text-accent"
               variant={"ghost"}
               onClick={() => {
                 setIsOpen(false);
@@ -66,7 +66,7 @@ export default function Appbar() {
       <div className="hidden md:flex gap-4 items-center">
         <Contact />
         <Button
-          className="bg-background hover:bg-background text-base hover:text-accent"
+          className="bg-transparent hover:bg-transparent text-base hover:text-accent"
           variant={"ghost"}
           onClick={() =>
             document
@@ -76,7 +76,7 @@ export default function Appbar() {
         >
           Projects
         </Button>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </div>
     </header>
   );
