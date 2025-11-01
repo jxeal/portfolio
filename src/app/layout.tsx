@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sayakcodes.in"),
   title: {
     default: "Sayak Majumder",
-    template: "%s | Full Stack Developer",
+    template: "%s ",
   },
   description:
     "I'm a Full Stack Developer skilled in React, Next.js, TypeScript, AWS, Node.js. Check out my portfolio!",
@@ -101,14 +101,14 @@ export default function RootLayout({
         >
           <Prism
             animationType="3drotate"
-            timeScale={0.5}
+            timeScale={0.4}
             height={3.5}
             baseWidth={5.5}
             scale={3.6}
-            hueShift={0}
-            colorFrequency={4}
+            hueShift={150}
+            colorFrequency={-1}
             noise={0}
-            glow={0.7}
+            glow={0.35}
           />
         </div>
         <ThemeProvider

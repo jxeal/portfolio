@@ -132,7 +132,7 @@ export default function Contact({
         {!dialogTriggger && (
           <DialogTrigger asChild>
             <Button
-              className="bg-transparent hover:bg-transparent text-base hover:text-accent"
+              className="bg-transparent hover:bg-transparent text-lg hover:text-accent"
               variant={"ghost"}
             >
               Contact

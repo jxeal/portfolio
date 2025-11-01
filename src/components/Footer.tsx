@@ -6,12 +6,12 @@ export default function Footer() {
   return (
     <div className="footer flex flex-col justify-center items-center font-['Clash_Display']">
       <div className="mt-16 h-[1px] w-full bg-foreground"></div>
-      <div className="flex justify-center items-center gap-5 p-8 text-lg">
+      <div className="flex justify-center items-center gap-5 pt-8 pb-4 text-lg">
         <Contact />
         <div>||</div>
         <div>
           <Link
-            className="text-base font-medium hover:text-accent "
+            className="text-lg font-medium hover:text-accent "
             href={data.contact_info.github.link}
             target="_blank"
           >
@@ -21,7 +21,7 @@ export default function Footer() {
         <div>||</div>
         <div>
           <Link
-            className="text-base font-medium hover:text-accent "
+            className="text-lg font-medium hover:text-accent "
             href={data.contact_info.x_twitter.link}
             target="_blank"
           >
@@ -29,7 +29,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="pb-10 text-sm text-center ">
+      <div className="pb-5 text-sm text-center ">
         Made with{" "}
         <a
           href="https://nextjs.org/"
