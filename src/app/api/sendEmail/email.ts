@@ -1,8 +1,13 @@
-// Create your own email TemplateContext. Mine is created using stripo 
+// Create your own email TemplateContext. Mine is created using stripo
 
-
-export default function emailFunc(name:string, email_id:string, phone:number, service:string, message:string){
-    const emailStr = `<!DOCTYPE html>
+export default function emailFunc(
+  name: string,
+  email_id: string,
+  phone: number,
+  service: string,
+  message: string
+) {
+  const emailStr = `<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -538,7 +543,7 @@ export default function emailFunc(name:string, email_id:string, phone:number, se
                           </tr>
                         </table>
                         <!--[if mso]></td><td style="width:53px"></td><td style="width:243px" valign="top"><![endif]-->
-                        <table
+                        <!--<table
                           cellpadding="0"
                           cellspacing="0"
                           align="right"
@@ -1408,7 +1413,6 @@ export default function emailFunc(name:string, email_id:string, phone:number, se
       </table>
     </div>
   </body>
-</html>`
-;
- return emailStr;
+</html>`;
+  return emailStr;
 }
