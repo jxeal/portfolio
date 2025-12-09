@@ -10,7 +10,7 @@ export interface BlogPostMetadata {
 
 export const allBlogs: BlogPostMetadata[] = [
   {
-    slug: "Full-Time",
+    slug: "full-time",
     title: "Full Time? Ayein?",
     date: "October 23, 2025",
     excerpt:

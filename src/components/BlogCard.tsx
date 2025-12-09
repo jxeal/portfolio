@@ -9,9 +9,9 @@ export default function BlogCard({ post }: BlogCardProps) {
   return (
     <Link
       href={`/blogs/${post.slug}`}
-      className="block p-6 border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out dark:border-gray-700 dark:bg-gray-800 hover:zoom-in-110"
+      className="group block p-6 border border-gray-200 rounded-lg transition duration-300 ease-in-out dark:border-gray-700 dark:bg-gray-800 "
     >
-      <h3 className="text-2xl font-bold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">
+      <h3 className="text-2xl font-bold text-blue-600 group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-300">
         {post.title}
       </h3>
       <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-3">
