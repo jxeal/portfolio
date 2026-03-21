@@ -1,4 +1,4 @@
-import { Fulltime } from "./Blogs";
+import { Fired, Fulltime } from "./Blogs";
 
 export interface BlogPostMetadata {
   slug: string; // Used for the route: /blogs/[slug]
@@ -16,5 +16,13 @@ export const allBlogs: BlogPostMetadata[] = [
     excerpt:
       "No interviews, no notices, no stupid fluff, just a talk and fulltime offer? Ayein?",
     content: <Fulltime />,
+  },
+  {
+    slug: "fired",
+    title: "Fired? Already? Bruh.",
+    date: "Feb 1, 2026",
+    excerpt:
+      "3 months of full time and already fired?",
+    content: <Fired />,
   },
 ];
