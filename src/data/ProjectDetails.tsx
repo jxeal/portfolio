@@ -28,7 +28,7 @@ export const ProjectDetails: Card[] = [
       "/acpprod/p5.webp",
       "/acpprod/p6.webp",
     ],
-    type: "Freelance Project",
+    type: "Freelance",
     content: <ACPProd />,
   },
   {
@@ -46,7 +46,7 @@ export const ProjectDetails: Card[] = [
     ],
     liveLink: "https://gamewave.dev/",
     liveText: "Live Link",
-    type: "Freelance Project",
+    type: "Freelance",
     content: <Gamewave />,
   },
   {
@@ -66,7 +66,7 @@ export const ProjectDetails: Card[] = [
     ],
     liveLink: "https://sfgifts.in/",
     liveText: "Live Link",
-    type: "Freelance Project",
+    type: "Freelance",
     content: <SignatureFactory />,
   },
   {
@@ -78,7 +78,7 @@ export const ProjectDetails: Card[] = [
     liveText: "Live Link",
     gitLink: "https://github.com/jxeal/webrtc-next",
     gitText: "Github Link",
-    type: "Personal Project",
+    type: "Project",
     content: <WebRTC />,
   },
 ];

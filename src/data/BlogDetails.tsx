@@ -1,4 +1,4 @@
-import { Fired, Fulltime } from "./Blogs";
+import { AiOnPhone, Fired, Fulltime } from "./Blogs";
 
 export interface BlogPostMetadata {
   slug: string; // Used for the route: /blogs/[slug]
@@ -10,12 +10,11 @@ export interface BlogPostMetadata {
 
 export const allBlogs: BlogPostMetadata[] = [
   {
-    slug: "full-time",
-    title: "Full Time? Ayein?",
-    date: "October 23, 2025",
-    excerpt:
-      "No interviews, no notices, no stupid fluff, just a talk and fulltime offer? Ayein?",
-    content: <Fulltime />,
+    slug: "ai-on-a-10yo-phone",
+    title: "AI on a 10y/o phone?",
+    date: "May 5, 2026",
+    excerpt: "Exploring if you can run AI models on a 10 year old phone.",
+    content: <AiOnPhone />,
   },
   {
     slug: "fired",
@@ -24,5 +23,13 @@ export const allBlogs: BlogPostMetadata[] = [
     excerpt:
       "3 months of full time and already fired?",
     content: <Fired />,
+  },  
+  {
+    slug: "full-time",
+    title: "Full Time? Ayein?",
+    date: "October 23, 2025",
+    excerpt:
+      "No interviews, no notices, no stupid fluff, just a talk and fulltime offer? Ayein?",
+    content: <Fulltime />,
   },
 ];

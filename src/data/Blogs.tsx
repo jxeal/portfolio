@@ -143,7 +143,7 @@ export const Fired = () => {
           again, <br />
           <span className="font-semibold">
             I DID WHAT I DID. <br />
-            I DON&apos;T REGRET ANYT OF WHAT I DID. <br />
+            I DON&apos;T REGRET ANY OF WHAT I DID. <br />
             I WOULD DO THE ENTIRE THING AGAIN <br />
             AND I WOULD LOVE EVERY SECOND OF IT AGAIN!
           </span>
@@ -154,6 +154,14 @@ export const Fired = () => {
           Onto the next chapter! Peace!
         </div>
       </div>
+    </div>
+  );
+};
+
+export const AiOnPhone = () => {
+  return (
+    <div>
+      <div>This is a placeholder for the AI on a 10y/o phone blog. I&apos;ll fill it in later.</div>
     </div>
   );
 };
