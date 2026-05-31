@@ -65,11 +65,11 @@ export default async function SingleBlogPage({
             <ShareButton title={post.title} slug={post.slug} />
           </div>
 
-          <h1 className={`${syne.className} text-4xl md:text-6xl lg:text-[5rem] font-black text-transparent bg-clip-text bg-gradient-to-br from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-neutral-500 tracking-tighter leading-[0.95] md:leading-[0.85] mb-6 md:mb-8`}>
+          <h1 className={`${syne.className} text-4xl md:text-6xl  font-black text-transparent bg-clip-text bg-gradient-to-br from-neutral-900 via-neutral-700 to-neutral-900 dark:from-white dark:via-neutral-300 dark:to-neutral-500 tracking-tighter leading-[0.95] md:leading-[0.85] mb-6 md:mb-8`}>
             {post.title}
           </h1>
           
-          <p className={`${spaceMono.className} text-neutral-600 dark:text-neutral-400 text-base md:text-lg lg:text-xl mb-8 border-l-4 border-neutral-900 dark:border-white pl-4 md:pl-6 leading-relaxed max-w-3xl`}>
+          <p className={`${spaceMono.className} text-neutral-600 dark:text-neutral-400 text-base md:text-lg  mb-8 border-l-4 border-neutral-900 dark:border-white pl-4 md:pl-6 leading-relaxed max-w-3xl`}>
             {post.excerpt}
           </p>
         </div>

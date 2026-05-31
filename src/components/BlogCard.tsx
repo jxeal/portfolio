@@ -50,7 +50,7 @@ export default function BlogCard({ post, index = 0 }: BlogCardProps) {
         <div className="absolute inset-0 bg-gradient-to-br from-black/[0.02] to-transparent dark:from-white/[0.02] pointer-events-none" />
         
         {/* Large abstract number background */}
-        <div className={`absolute top-0 ${isEven ? 'right-4' : 'left-4'} -translate-y-[10%] text-[10rem] md:text-[18rem] leading-none font-black text-black/[0.03] dark:text-white/[0.03] select-none pointer-events-none transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-[15%] ${syne.className}`}>
+        <div className={`absolute top-0 ${isEven ? 'right-4' : 'left-4'} -translate-y-[10%] text-[10rem] md:text-[18rem] lg:text-[18rem] leading-none font-black text-black/[0.03] dark:text-white/[0.03] select-none pointer-events-none transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-[15%] ${syne.className}`}>
             {(index + 1).toString().padStart(2, '0')}
         </div>
 
@@ -63,7 +63,7 @@ export default function BlogCard({ post, index = 0 }: BlogCardProps) {
               <div className={`h-[2px] flex-1 bg-neutral-300 dark:bg-neutral-700 transition-all duration-700 group-hover:bg-neutral-900 dark:group-hover:bg-white scale-x-[0.3] group-hover:scale-x-100 ${isEven ? 'origin-left' : 'origin-right'}`} />
             </div>
             
-            <h3 className={`${syne.className} font-extrabold text-neutral-900 dark:text-white text-3xl md:text-5xl lg:text-7xl tracking-tighter leading-[0.95] transition-transform duration-700 group-hover:-translate-y-2 ${!isEven ? 'md:text-right' : ''}`}>
+            <h3 className={`${syne.className} font-extrabold text-neutral-900 dark:text-white text-3xl md:text-5xl lg:text-5xl tracking-tighter leading-[0.95] transition-transform duration-700 group-hover:-translate-y-2 ${!isEven ? 'md:text-right' : ''}`}>
               {post.title}
             </h3>
             
@@ -72,7 +72,7 @@ export default function BlogCard({ post, index = 0 }: BlogCardProps) {
             </p>
 
             <div className={`inline-flex items-center gap-3 mt-4 text-xs font-bold uppercase tracking-widest text-neutral-900 dark:text-white ${spaceMono.className} ${!isEven ? 'w-full md:justify-end' : ''}`}>
-               {isEven ? 'Read Transmission' : 'Transmitting'} 
+               {isEven ? 'Read Transmission' : ''} 
                <motion.span 
                  className="inline-block" 
                  transition={{ repeat: Infinity, duration: 1.5 }}
