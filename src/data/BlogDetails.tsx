@@ -12,7 +12,7 @@ export const allBlogs: BlogPostMetadata[] = [
   {
     slug: "ai-on-a-10yo-phone",
     title: "AI on a 10y/o phone?",
-    date: "May 5, 2026",
+    date: "June 1, 2026",
     excerpt: "Running AI models on a 10 year old phone.",
     content: <AiOnPhone />,
   },

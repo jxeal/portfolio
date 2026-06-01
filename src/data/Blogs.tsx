@@ -370,16 +370,41 @@ export const AiOnPhone = () => {
         peaceful!
       </p>
       <br />
-      {/* Video proof here */}
       <p>
         From there on, I tried it out a little more, and yes, a 500M param model
         isn't that good, but the fact that it run was a massive ego boost. I
-        went on to run Llama 3.2 1B param model as well, and it was better. This
-        model ran only because I force stopped some services and changed the
-        launcher which gave a 1B param model the breathing room to run! Now
-        obviously a 1B param model wont run in its full glory on 1GB RAM so I
-        had to run the GGUF Q4 version. (Meaning that the model I run was
-        quantized from FP16 - 16 bits to 4 bits).
+        went on to run Llama 3.2 1B param model as well, and it was better, but
+        naturally slower. This model ran only because I force stopped some
+        services and changed the launcher which gave a 1B param model the
+        breathing room to run! Now obviously a 1B param model wont run in its
+        full glory on 1GB RAM so I had to run the GGUF Q4 version, and to be in
+        a safe side I used the Q4 version for even the 500M model which could
+        have run without the quantization. (In muggle terms - Quantization means
+        that the model I ran was compressed from FP16 - 16 bits to 4 bits).
+      </p>
+      <br />
+      <p>
+        Here's a full video of how the models worked out!
+        <br />
+        <br />
+        <iframe
+          width="100%"
+          height="400"
+          src="https://www.youtube.com/embed/CBSDAKy770E?si=knwEOjNvm0Vgu0zx"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+        <br />
+        If the embed doesnt work, watch it in{" "}
+        <Link
+          className="underline hover:text-accent "
+          href={"https://www.youtube.com/watch?v=CBSDAKy770E"}
+          target="_blank"
+        >
+          YouTube
+        </Link>
+        .
       </p>
       <br />
       <p>
