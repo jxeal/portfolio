@@ -392,7 +392,7 @@ export const AiOnPhone = () => {
         <br />
         <iframe
           width="100%"
-          height="400"
+          height="350"
           src="https://www.youtube.com/embed/CBSDAKy770E?si=knwEOjNvm0Vgu0zx"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

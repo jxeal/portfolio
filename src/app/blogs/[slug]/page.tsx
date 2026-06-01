@@ -56,7 +56,7 @@ export default async function SingleBlogPage({
         </Link>
         
         <div className="mb-10 md:mb-16">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 md:mb-8 border-b border-neutral-200/50 dark:border-white pb-6">
+          <div className="flex items-center justify-between gap-4 mb-6 md:mb-8 border-b border-neutral-200/50 dark:border-white pb-6">
             <div className="flex items-center gap-4">
               <span className={`${spaceMono.className} inline-block px-4 py-1.5 text-xs font-bold text-neutral-900 dark:text-white bg-white/50 dark:bg-white/10 backdrop-blur-md rounded-full border border-neutral-300 dark:border-neutral-700 uppercase tracking-widest`}>
                 {post.date}
