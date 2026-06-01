@@ -133,3 +133,50 @@ export const ACPProd = () => {
     </div>
   );
 };
+
+export const MLDailyProd = () => {
+  return (
+    <div>
+      <div className="text-sm md:text-lg lg:text-xl font-semibold">
+        Built an ML learning platform that guides users from beginner to
+        advanced concepts through structured lessons, quizzes, and daily
+        challenges.
+      </div>
+      <br />
+      <div>
+        <span className="text-sm md:text-lg lg:text-xl font-semibold">
+          Structured Learning Path:-{" "}
+        </span>
+        Designed a chapter-based curriculum where topics are arranged in a
+        chronological order, enabling learners to build machine learning
+        knowledge progressively from fundamentals to advanced concepts.
+      </div>
+      <br />
+      <div>
+        <span className="text-sm md:text-lg lg:text-xl font-semibold">
+          Interactive Lessons:-{" "}
+        </span>
+        Implemented blog-style chapters enriched with images, explanations, and
+        examples to make complex ML concepts easier to understand and retain.
+      </div>
+      <br />
+      <div>
+        <span className="text-sm md:text-lg lg:text-xl font-semibold">
+          Progress Tracking & Quizzes:-{" "}
+        </span>
+        Added chapter-end quizzes to evaluate understanding. Successfully
+        completing a quiz marks the chapter as completed and unlocks the next
+        lesson in the learning path.
+      </div>
+      <br />
+      <div>
+        <span className="text-sm md:text-lg lg:text-xl font-semibold">
+          Daily Challenges:-{" "}
+        </span>
+        Developed a daily challenge system that encourages consistent practice
+        and reinforces key machine learning concepts through regular problem
+        solving.
+      </div>
+    </div>
+  );
+};

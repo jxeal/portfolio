@@ -1,4 +1,10 @@
-import { WebRTC, SignatureFactory, Gamewave, ACPProd } from "@/data/Projects";
+import {
+  WebRTC,
+  SignatureFactory,
+  Gamewave,
+  ACPProd,
+  MLDailyProd,
+} from "@/data/Projects";
 
 type Card = {
   title: string;
@@ -6,15 +12,31 @@ type Card = {
   techStacks: string;
   src: string;
   images?: string[];
-  liveText?: string;
   liveLink?: string;
-  gitText?: string;
   gitLink?: string;
   type: string;
   content: React.ReactNode;
 };
 
 export const ProjectDetails: Card[] = [
+  {
+    title: "ML Daily",
+    description: "Machine Learning Learning platform",
+    techStacks: "Next.js TypeScript Supabase",
+    src: "/ml-daily/ml1.webp",
+    images: [
+      "/ml-daily/ml1.webp",
+      "/ml-daily/ml2.webp",
+      "/ml-daily/ml3.webp",
+      "/ml-daily/ml4.webp",
+      "/ml-daily/ml5.webp",
+      "/ml-daily/ml6.webp",
+    ],
+    type: "Project",
+    liveLink: "https://ml-daily.vercel.app/",
+    gitLink: "https://github.com/jxeal/ML-Daily",
+    content: <MLDailyProd />,
+  },
   {
     title: "ACP Production",
     description: "S3 Bucket based File Storage",
@@ -45,7 +67,6 @@ export const ProjectDetails: Card[] = [
       "/gamewave/gamewave-6.jpg",
     ],
     liveLink: "https://gamewave.dev/",
-    liveText: "Live Link",
     type: "Freelance",
     content: <Gamewave />,
   },
@@ -65,7 +86,6 @@ export const ProjectDetails: Card[] = [
       "/sigfac/sigfac-8.jpg",
     ],
     liveLink: "https://sfgifts.in/",
-    liveText: "Live Link",
     type: "Freelance",
     content: <SignatureFactory />,
   },
@@ -75,9 +95,7 @@ export const ProjectDetails: Card[] = [
     techStacks: "WebRTC NodeJs Express Socket.io",
     src: "/images/webrtc.jpg",
     liveLink: "https://webrtc-next.onrender.com",
-    liveText: "Live Link",
     gitLink: "https://github.com/jxeal/webrtc-next",
-    gitText: "Github Link",
     type: "Project",
     content: <WebRTC />,
   },

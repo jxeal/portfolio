@@ -197,13 +197,13 @@ export function ProjectData() {
                     {active.gitLink && (
                       <Button
                         variant={"outline"}
-                        className="rounded-xl h-12 w-12 p-0 border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 bg-white/50 dark:bg-transparent backdrop-blur-sm"
+                        className="rounded-xl h-12 px-6 bg-neutral-900 dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 flex items-center gap-2 font-semibold text-base transition-colors"
                         onClick={(e) => {
                           e.preventDefault();
                           window.open(active.gitLink, "_blank");
                         }}
                       >
-                        <IconBrandGithub size={24} />
+                        Github <IconBrandGithub size={18} />
                       </Button>
                     )}
 
