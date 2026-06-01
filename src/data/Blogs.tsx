@@ -166,7 +166,7 @@ export const AiOnPhone = () => {
         but, who is going to let me try out the model? Like quite frankly that
         model required 220 gigs of (drum roll please...) VRAM. I have 16 gigs of
         RAM. So yeah, running it locally was completely out of question (I
-        didn't want to melt my laptop, duh).
+        didn&apos;t want to melt my laptop, duh).
       </p>
       <br />
 
@@ -230,7 +230,7 @@ export const AiOnPhone = () => {
         For normal people, the latest chipsets for phones are 4nm (the lower the
         faster), and 3nm for the flagships. Octa-core 4.74 GHz processor and
         Adreno 840 (1.3GHz) GPU and 12/16GB RAM. This is just the hardware
-        difference between a midrange phone from '16 and a Flagship from '26.
+        difference between a midrange phone from &apos;16 and a Flagship from &apos;26.
         [These are the specs of{" "}
         <Link
           className="underline hover:text-accent "
@@ -262,7 +262,7 @@ export const AiOnPhone = () => {
         we use) took up ~300mb, and some other apps that were absolutely
         necessary (Phone app, Settings, Gboard takes 60mb for some reason? etc
         etc) took up ~250mb. So, idle RAM usage ~900mb. In a 10 y/o phone I
-        couldn't use the ROM as RAM, cause the secondary memory was even slower.{" "}
+        couldn&apos;t use the ROM as RAM, cause the secondary memory was even slower.{" "}
         <br />
         Which meant I only got 1GB RAM for the actual model to run.
       </p>
@@ -285,7 +285,7 @@ export const AiOnPhone = () => {
         >
           android adb
         </Link>
-        , and just force shut down a lot of the services which aren't necessary
+        , and just force shut down a lot of the services which aren&apos;t necessary
         anymore (Phone, Messages, Photos etc) which saved another ~150mb.
       </p>
       <br />
@@ -308,7 +308,7 @@ export const AiOnPhone = () => {
           ai-studio
         </Link>{" "}
         (cause its free, and the usage limits are massive). The build kept
-        failing because of dependencies which couldn't run on the old software,
+        failing because of dependencies which couldn&apos;t run on the old software,
         and gemini kept on making changes to accustom them.
         <br />A whole lot of fixes here and there and about 18 hours of trial
         and error later, it... failed at 100%, 3 separate times. Imagine waiting
@@ -341,7 +341,7 @@ export const AiOnPhone = () => {
       </pre>
       <br />
       <p>
-        The "j4" tag would use all 4 cores of CPU. That cut the build time from
+        The &quot;j4&quot; tag would use all 4 cores of CPU. That cut the build time from
         about 1.5 hours to around 25 mins.
       </p>
       <br />
@@ -372,7 +372,7 @@ export const AiOnPhone = () => {
       <br />
       <p>
         From there on, I tried it out a little more, and yes, a 500M param model
-        isn't that good, but the fact that it run was a massive ego boost. I
+        isn&apos;t that good, but the fact that it run was a massive ego boost. I
         went on to run Llama 3.2 1B param model as well, and it was better, but
         naturally slower. This model ran only because I force stopped some
         services and changed the launcher which gave a 1B param model the
@@ -384,7 +384,7 @@ export const AiOnPhone = () => {
       </p>
       <br />
       <p>
-        Here's a full video of how the models worked out!
+        Here&apos;s a full video of how the models worked out!
         <br />
         <br />
         <iframe
@@ -410,7 +410,7 @@ export const AiOnPhone = () => {
       <p>
         Once llama.cpp was set up, running another model was just downloading
         the model and running the command to run it. Ofcouse within the physical
-        hardware bounds. That's all!
+        hardware bounds. That&apos;s all!
       </p>
       <br />
       <p>
