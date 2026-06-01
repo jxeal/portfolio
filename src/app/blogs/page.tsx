@@ -23,12 +23,6 @@ export default function BlogsIndexPage() {
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute -top-[10%] -left-[10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] rounded-full bg-blue-600/20 dark:bg-purple-600/20 blur-[100px] animate-pulse" />
         <div className="absolute top-[30%] -right-[15%] w-[400px] md:w-[500px] h-[400px] md:h-[500px] rounded-full bg-emerald-600/10 dark:bg-emerald-500/10 blur-[120px]" />
-        
-        <div 
-           className={`absolute top-[40%] text-[15vw] font-black text-neutral-500 opacity-[0.03] select-none whitespace-nowrap -rotate-6 ${syne.className}`}
-        >
-          MIND YAPPING
-        </div>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 md:px-8 relative z-10">
