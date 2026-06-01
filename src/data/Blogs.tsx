@@ -270,13 +270,13 @@ export const AiOnPhone = () => {
 
       <p>
         I decided to change the launcher to a lighter one{" "}
-        <Link
+        (<Link
           className="underline hover:text-accent "
           href={"https://f-droid.org/en/packages/fr.neamar.kiss/"}
           target="_blank"
         >
-          (KISS Launcher)
-        </Link>
+          KISS Launcher
+        </Link>)
         , which takes 30mb of memory to run. I also decided to use{" "}
         <Link
           className="underline hover:text-accent "
@@ -323,6 +323,9 @@ export const AiOnPhone = () => {
         alt="Build failed at 100%?"
         className="w-[90%] h-auto"
       />
+      <p>
+        Just so were on the same page, I understand the error (atleast some of them tbh), I was just fedup of the tiny issues all over. 
+      </p>
       <br />
       <p>
         GPT finally pointed out that I was missing the atomic linking flags
@@ -384,7 +387,7 @@ export const AiOnPhone = () => {
       </p>
       <br />
       <p>
-        Here&apos;s a full video of how the models worked out!
+        Here&apos;s a full video of how the models worked out! I used ssh to run the model in my phone but record it from my PC. 
         <br />
         <br />
         <iframe
