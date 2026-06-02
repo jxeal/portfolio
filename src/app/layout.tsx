@@ -101,6 +101,7 @@ export default function RootLayout({
         >
           <Prism
             animationType="3drotate"
+            fixedFrame={0}
             timeScale={0.4}
             height={3.5}
             baseWidth={5.5}

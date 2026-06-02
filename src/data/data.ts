@@ -46,7 +46,7 @@ export const data = {
       " Next.js",
       " Express.js",
       " Node.js",
-      " Socket.io",
+      " Socket.IO",
       " WebRTC",
       " MongoDB",
       " Postgres",

@@ -3,6 +3,7 @@ import { allBlogs } from "@/data/BlogDetails";
 import ShareButton from "@/components/ShareButton";
 import { Syne, Space_Mono } from "next/font/google";
 import Link from "next/link";
+import AnimationNotification from "@/components/AnimationNotification";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default async function SingleBlogPage({
 
   return (
     <article className="relative min-h-screen pb-12 md:pb-20 overflow-hidden">
+      <AnimationNotification />
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-[5%] -right-[10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] rounded-full bg-blue-600/10 dark:bg-purple-600/10 blur-[100px]" />

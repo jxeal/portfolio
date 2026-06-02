@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
+import { Menu, Play, Pause } from "lucide-react";
 import { data } from "@/data/data";
 // import ThemeToggle from "../components/ThemeToggle";
 import { useRouter, usePathname } from "next/navigation";
@@ -20,6 +20,36 @@ export default function Appbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [scrollToProjects, setScrollToProjects] = useState(false);
+  const [isPrismPaused, setIsPrismPaused] = useState(false);
+  const [highlightToggle, setHighlightToggle] = useState(false);
+
+  useEffect(() => {
+    const handleHighlight = () => setHighlightToggle(true);
+    const handleRemoveHighlight = () => setHighlightToggle(false);
+    
+    window.addEventListener("highlightPrismToggle", handleHighlight);
+    window.addEventListener("removeHighlightPrismToggle", handleRemoveHighlight);
+    
+    // Any click removes highlight, but capture phase so it triggers properly
+    window.addEventListener("click", handleRemoveHighlight, { capture: true }); 
+    
+    return () => {
+      window.removeEventListener("highlightPrismToggle", handleHighlight);
+      window.removeEventListener("removeHighlightPrismToggle", handleRemoveHighlight);
+      window.removeEventListener("click", handleRemoveHighlight, { capture: true });
+    };
+  }, []);
+
+  const togglePrism = () => {
+    setHighlightToggle(false); // Remove highlight when clicked
+    const newState = !isPrismPaused;
+    setIsPrismPaused(newState);
+    window.dispatchEvent(
+      new CustomEvent("setPrismAnimation", {
+        detail: { animType: newState ? "fixed" : "3drotate" },
+      })
+    );
+  };
 
   const handleTitleClick = () => {
     if (pathname !== "/") {
@@ -66,7 +96,15 @@ export default function Appbar() {
       </div>
 
       {/* Hamburger Button (Mobile) */}
-      <div className="md:hidden flex items-center ">
+      <div className="md:hidden flex items-center gap-2">
+        <Button
+          className={`bg-transparent hover:bg-transparent hover:text-accent p-2 ${highlightToggle ? 'animate-pulse ring-2 ring-white rounded-full' : ''}`}
+          variant={"ghost"}
+          onClick={togglePrism}
+          title={isPrismPaused ? "Play shape animation" : "Pause shape animation"}
+        >
+          {isPrismPaused ? <Play size={20} /> : <Pause size={20} />}
+        </Button>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetHeader className="px-0 py-0">
             <SheetTitle>
@@ -134,6 +172,14 @@ export default function Appbar() {
 
       {/* Navigation Links (Desktop) */}
       <div className="hidden md:flex gap-4 items-center">
+        <Button
+          className={`bg-transparent hover:bg-transparent text-lg hover:text-accent ${highlightToggle ? 'animate-pulse ring-2 ring-white rounded-full' : ''}`}
+          variant={"ghost"}
+          onClick={togglePrism}
+          title={isPrismPaused ? "Play shape animation" : "Pause shape animation"}
+        >
+          {isPrismPaused ? <Play size={20} /> : <Pause size={20} />}
+        </Button>
         <Button
           className="bg-transparent hover:bg-transparent text-lg hover:text-accent"
           variant={"ghost"}

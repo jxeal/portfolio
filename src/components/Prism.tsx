@@ -5,7 +5,8 @@ import { Renderer, Triangle, Program, Mesh } from "ogl";
 type PrismProps = {
   height?: number;
   baseWidth?: number;
-  animationType?: "rotate" | "hover" | "3drotate";
+  animationType?: "rotate" | "hover" | "3drotate" | "fixed";
+  fixedFrame?: number;
   glow?: number;
   offset?: { x?: number; y?: number };
   noise?: number;
@@ -24,6 +25,7 @@ const Prism: React.FC<PrismProps> = ({
   height = 3.5,
   baseWidth = 5.5,
   animationType = "rotate",
+  fixedFrame = 500,
   glow = 1,
   offset = { x: 0, y: 0 },
   noise = 0.5,
@@ -292,11 +294,26 @@ const Prism: React.FC<PrismProps> = ({
       return out;
     };
 
+    let currentAnimType = animationType;
+    const handleAnimChange = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail && customEvent.detail.animType) {
+        currentAnimType = customEvent.detail.animType;
+      }
+    };
+    window.addEventListener("setPrismAnimation", handleAnimChange);
+
     const NOISE_IS_ZERO = NOISE < 1e-6;
     let raf = 0;
     const t0 = performance.now();
+    let lastT = t0;
+    
+    let accumulatedTimeUnscaled = (fixedFrame || 0) * 0.01;
+    let accumulatedTimeScaled = accumulatedTimeUnscaled * TS;
+
     const startRAF = () => {
       if (raf) return;
+      lastT = performance.now();
       raf = requestAnimationFrame(render);
     };
     const stopRAF = () => {
@@ -305,7 +322,14 @@ const Prism: React.FC<PrismProps> = ({
       raf = 0;
     };
 
-    const rnd = () => Math.random();
+    let seed = 1234;
+    const rnd = () => {
+      if (animationType === "fixed") {
+        const x = Math.sin(seed++) * 10000;
+        return x - Math.floor(x);
+      }
+      return Math.random();
+    };
     const wX = (0.3 + rnd() * 0.6) * RSX;
     const wY = (0.2 + rnd() * 0.7) * RSY;
     const wZ = (0.1 + rnd() * 0.5) * RSZ;
@@ -348,19 +372,26 @@ const Prism: React.FC<PrismProps> = ({
       window.addEventListener("mouseleave", onLeave);
       window.addEventListener("blur", onBlur);
       program.uniforms.uUseBaseWobble.value = 0;
-    } else if (animationType === "3drotate") {
+    } else if (animationType === "3drotate" || animationType === "fixed") {
       program.uniforms.uUseBaseWobble.value = 0;
     } else {
       program.uniforms.uUseBaseWobble.value = 1;
     }
 
     const render = (t: number) => {
-      const time = (t - t0) * 0.001;
-      program.uniforms.iTime.value = time;
+      const delta = Math.max(0, t - lastT);
+      lastT = t;
+
+      if (currentAnimType !== "fixed") {
+        accumulatedTimeUnscaled += delta * 0.001;
+        accumulatedTimeScaled += delta * 0.001 * TS;
+      }
+
+      program.uniforms.iTime.value = accumulatedTimeUnscaled;
 
       let continueRAF = true;
 
-      if (animationType === "hover") {
+      if (currentAnimType === "hover") {
         const maxPitch = 0.6 * HOVSTR;
         const maxYaw = 0.6 * HOVSTR;
         targetYaw = (pointer.inside ? -pointer.x : 0) * maxYaw;
@@ -385,18 +416,17 @@ const Prism: React.FC<PrismProps> = ({
             Math.abs(roll) < 1e-4;
           if (settled) continueRAF = false;
         }
-      } else if (animationType === "3drotate") {
-        const tScaled = time * TS;
-        yaw = tScaled * wY;
-        pitch = Math.sin(tScaled * wX + phX) * 0.6;
-        roll = Math.sin(tScaled * wZ + phZ) * 0.5;
+      } else if (currentAnimType === "3drotate" || currentAnimType === "fixed") {
+        yaw = accumulatedTimeScaled * wY;
+        pitch = Math.sin(accumulatedTimeScaled * wX + phX) * 0.6;
+        roll = Math.sin(accumulatedTimeScaled * wZ + phZ) * 0.5;
         program.uniforms.uRot.value = setMat3FromEuler(
           yaw,
           pitch,
           roll,
           rotBuf
         );
-        if (TS < 1e-6) continueRAF = false;
+        if (TS < 1e-6 && currentAnimType !== "fixed") continueRAF = false;
       } else {
         rotBuf[0] = 1;
         rotBuf[1] = 0;
@@ -437,6 +467,7 @@ const Prism: React.FC<PrismProps> = ({
     }
 
     return () => {
+      window.removeEventListener("setPrismAnimation", handleAnimChange);
       stopRAF();
       ro.disconnect();
       if (animationType === "hover") {
@@ -462,6 +493,7 @@ const Prism: React.FC<PrismProps> = ({
     height,
     baseWidth,
     animationType,
+    fixedFrame,
     glow,
     noise,
     offset?.x,

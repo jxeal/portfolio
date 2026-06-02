@@ -77,10 +77,19 @@ export function ProjectData() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full h-full md:h-auto md:max-h-[100%] max-w-5xl flex flex-col bg-white dark:bg-black/90 backdrop-blur-3xl overflow-hidden overflow-y-auto scrollbar-none md:rounded-[2rem] shadow-2xl border-0 md:border md:border-white/10"
+              className="w-full h-full md:h-auto md:max-h-[100%] max-w-5xl flex flex-col bg-white dark:bg-black/90 backdrop-blur-3xl overflow-hidden md:rounded-[2rem] shadow-2xl border-0 md:border md:border-white/10 relative"
             >
-              <div className="relative shrink-0">
-                <motion.div
+              <button
+                onClick={() => setActive(null)}
+                className="absolute top-4 right-4 md:top-6 md:right-6 bg-black/50 hover:bg-black/70 backdrop-blur-lg border border-white/20 text-white rounded-full h-10 w-10 flex items-center justify-center transition-colors z-50"
+                aria-label="Close"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+              
+              <div className="w-full h-full flex flex-col overflow-y-auto scrollbar-none">
+                <div className="relative shrink-0">
+                  <motion.div
                   layoutId={`image-${active.title}-${id}`}
                   className="relative group"
                 >
@@ -166,14 +175,6 @@ export function ProjectData() {
                     </div>
                   )}
                 </motion.div>
-                
-                <button
-                  onClick={() => setActive(null)}
-                  className="absolute top-4 right-4 md:top-6 md:right-6 bg-black/50 hover:bg-black/70 backdrop-blur-lg border border-white/20 text-white rounded-full h-10 w-10 flex items-center justify-center transition-colors z-50"
-                  aria-label="Close"
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                </button>
               </div>
 
               <div className="p-6 md:p-10 flex flex-col font-['Clash_Display'] w-full pb-20 md:pb-10">
@@ -260,6 +261,7 @@ export function ProjectData() {
                     </motion.div>
                   </div>
                 </div>
+              </div>
               </div>
             </motion.div>
           </div>
